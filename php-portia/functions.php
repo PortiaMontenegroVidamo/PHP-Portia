@@ -32,4 +32,22 @@ function updateTable(){
 	
 }
 
+
+function deleteTable(){
+	global $connection;
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	$id = $_POST['id'];
+
+	$query = "DELETE FROM users SET username = '$username', password = '$password' WHERE id = $id";
+	$result = mysqli_query($connection,$query);
+
+	
+}
+
+function redirect($site){
+	header('location:read.php');
+}
+
+
 ?>
